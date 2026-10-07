@@ -50,10 +50,17 @@
     <div class="cursor-orb" id="cursor-orb" aria-hidden="true"></div>
     <canvas id="gl" aria-hidden="true"></canvas>
     <aside class="sidebar"><div class="brand">Feather Atlas<small>Curated by Ajay Saini</small></div><nav class="nav" aria-label="Species navigation">
-      <button><svg><use href="#i-house"/></svg><span>Home</span></button><button class="active"><svg><use href="#i-star"/></svg><span>Featured<small>2 species</small></span></button><button><svg><use href="#i-bird"/></svg><span>Songbirds<small>34 species</small></span></button><button><svg><use href="#i-bird"/></svg><span>Kingfishers<small>8 species</small></span></button><button><svg><use href="#i-owl"/></svg><span>Owls<small>11 species</small></span></button><button><svg><use href="#i-bird"/></svg><span>Hummingbirds<small>15 species</small></span></button><button><svg><use href="#i-wings"/></svg><span>Raptors<small>12 species</small></span></button><button><svg><use href="#i-wings"/></svg><span>Waders<small>9 species</small></span></button>
+      <button class="active" data-cat="all"><svg><use href="#i-house"/></svg><span>All Species<small>18 species</small></span></button>
+      <button data-cat="featured"><svg><use href="#i-star"/></svg><span>Featured<small>2 species</small></span></button>
+      <button data-cat="songbirds"><svg><use href="#i-bird"/></svg><span>Songbirds<small>3 species</small></span></button>
+      <button data-cat="kingfishers"><svg><use href="#i-bird"/></svg><span>Kingfishers<small>1 species</small></span></button>
+      <button data-cat="owls"><svg><use href="#i-owl"/></svg><span>Owls<small>1 species</small></span></button>
+      <button data-cat="hummingbirds"><svg><use href="#i-bird"/></svg><span>Hummingbirds<small>1 species</small></span></button>
+      <button data-cat="raptors"><svg><use href="#i-wings"/></svg><span>Raptors<small>2 species</small></span></button>
+      <button data-cat="waders"><svg><use href="#i-wings"/></svg><span>Waders<small>5 species</small></span></button>
     </nav><div class="featured"><div class="eyebrow">Featured species</div><img id="featured-img" alt=""><h3 id="featured-title"></h3><p id="featured-text"></p><a class="link" href="#detail">Open field notes <svg style="width:13px;height:13px;vertical-align:-3px"><use href="#i-right"/></svg></a></div></aside>
     <div class="topbar"><div class="brand">Feather Atlas<small>AJAYNXT FIELD NOTES</small></div><div class="search"><svg><use href="#i-search"/></svg><input aria-label="Search" placeholder="Search species, habitats, or regions…"></div><button class="top-icon" aria-label="Notifications"><svg><use href="#i-bell"/></svg></button><button class="account" aria-label="Account"><svg><use href="#i-user"/></svg></button></div>
-    <main class="main"><div class="tabs" role="tablist" aria-label="Bird specimens"><button class="tab" id="tab-hoopoe" role="tab" aria-selected="false" data-bird="hoopoe"><img alt="Hoopoe specimen"><strong>Hoopoe</strong><em>Upupa epops</em></button><button class="tab" id="tab-kingfisher" role="tab" aria-selected="true" data-bird="kingfisher"><img alt="Kingfisher specimen"><strong>Kingfisher</strong><em>Alcedo atthis</em></button></div><div class="stage" id="stage" tabindex="0" role="application" aria-label="Interactive bird specimen. Drag to turn, scroll to zoom, double-click to reset."><div class="ground"></div><div class="loader" id="loader"><div class="spinner"></div><span>Preparing the specimen…</span></div><div class="fallback" id="fallback"><img alt="Bird specimen fallback"></div><div class="hint" id="hint"><svg><use href="#i-wings"/></svg>Drag to turn · scroll to zoom</div><div class="rail"><button data-action="zoom-in" aria-label="Zoom in"><svg><use href="#i-plus"/></svg></button><button data-action="zoom-out" aria-label="Zoom out"><svg><use href="#i-search"/></svg></button><button data-action="expand" aria-label="Expand focus mode"><svg><use href="#i-expand"/></svg></button><button data-action="light" aria-label="Toggle day and dusk light"><svg><use href="#i-sun"/></svg></button></div><div class="turn-pill"><button data-turn="-1" aria-label="Turn counter-clockwise"><svg><use href="#i-left"/></svg></button><span>360°</span><button data-turn="1" aria-label="Turn clockwise"><svg><use href="#i-right"/></svg></button></div><div class="caption" id="caption"></div></div></main>
+    <main class="main"><div class="tabs" role="tablist" aria-label="Bird specimens"></div><div class="stage" id="stage" tabindex="0" role="application" aria-label="Interactive bird specimen. Drag to turn, scroll to zoom, double-click to reset."><div class="ground"></div><div class="loader" id="loader"><div class="spinner"></div><span>Preparing 3D specimen…</span></div><div class="fallback" id="fallback" style="display:none"><img alt="Bird specimen fallback"></div><div class="hint" id="hint"><svg><use href="#i-wings"/></svg>Drag to turn · scroll to zoom · 3D Specimen</div><div class="rail"><button data-action="zoom-in" aria-label="Zoom in"><svg><use href="#i-plus"/></svg></button><button data-action="zoom-out" aria-label="Zoom out"><svg><use href="#i-search"/></svg></button><button data-action="expand" aria-label="Expand focus mode"><svg><use href="#i-expand"/></svg></button><button data-action="light" aria-label="Toggle day and dusk light"><svg><use href="#i-sun"/></svg></button></div><div class="turn-pill"><button data-turn="-1" aria-label="Turn counter-clockwise"><svg><use href="#i-left"/></svg></button><span>360°</span><button data-turn="1" aria-label="Turn clockwise"><svg><use href="#i-right"/></svg></button></div><div class="caption" id="caption"></div></div></main>
     <section class="info"><div class="tools"><select class="species-select" id="species-select" aria-label="Choose a species"></select><label class="search"><svg><use href="#i-search"/></svg><input aria-label="Search species, habitats, or regions" placeholder="Search species, habitats, or regions…"></label><button class="top-icon" aria-label="Notifications"><svg><use href="#i-bell"/></svg></button><button class="account" aria-label="Account"><svg><use href="#i-user"/></svg></button></div><div class="detail" id="detail"><article aria-live="polite"><div class="eyebrow family" id="family"></div><h1 id="bird-name"></h1><div class="tags" id="tags"></div><p class="description" id="description"></p><h2>Key Traits</h2><div class="traits" id="traits"></div><h2>Habitat</h2><div class="habitat"><svg><use href="#i-reed"/></svg><span id="habitat"></span></div><div class="curator"><strong>Field guide by Ajay Saini</strong>Creative developer, UI/UX designer and video editor · Sikar, Rajasthan · <a href="https://ajaynxt.com/" target="_blank" rel="noopener">ajaynxt.com</a><br><a href="https://wa.me/919929562585" target="_blank" rel="noopener">WhatsApp</a> · <a href="mailto:ajayx3neha@gmail.com">Email Ajay</a></div><button class="closeup" id="closeup" aria-pressed="false"><span class="lens" id="lens"></span><span><strong>Close-up Detail</strong><small id="closeup-text"></small></span><svg><use href="#i-right"/></svg></button></article></div></section>
   </div>
 
@@ -71,29 +78,500 @@
       kingfisher:{name:'Kingfisher',latin:'Alcedo atthis',family:'ALCEDINIDAE',image:'assets/kingfisher.png',model:CDN+'hf_20261004_073345_12721630-c589-442f-8884-e4a445cd8980.glb',tags:['River bird','Diver','Iridescent'],description:'A small, spectacular bird of rivers and lakes, the kingfisher is renowned for its dazzling plumage and astonishing hunting dives. A master of stealth and speed, it links healthy waterways with extraordinary beauty.',traits:[['i-ruler','Length','16–17 cm'],['i-gauge','Dive speed','Up to 40 km/h'],['i-fish','Diet','Small fish and insects'],['i-globe','Range','Europe and Asia']],habitat:'Slow rivers, streams and lakes.',caption:'Blink, and the river keeps its secret.',close:'An intricate mosaic of structure and colour gives the kingfisher its unmistakable sheen.',featuredTitle:'A flash of river blue.',featuredText:'Extraordinary colours. A remarkable life by the water.',lens:'24% 30%'}
     };
     const extra=(name,latin,family,tags,description,length,diet,range,habitat,caption,close)=>({name,latin,family,image:'',tags,description,traits:[['i-ruler','Length',length],['i-fish','Diet',diet],['i-globe','Range',range],['i-reed','Habitat',habitat]],habitat,caption,close,featuredTitle:name+' — field notes',featuredText:'A fresh entry for the Feather Atlas library.',lens:'50% 50%'});
-    Object.assign(birds,{peacock:extra('Indian Peafowl','Pavo cristatus','PHASIANIDAE',['Display bird','Iridescent','Courtship'],'A slow-moving icon of colour, the peafowl turns its tail into a living fan when the forest floor becomes a stage.','90–230 cm','Seeds, fruit and insects','Indian subcontinent','Open woodland and cultivated edges','A thousand eyes in one impossible fan.','The eye-spots are not ornaments alone; they are a language of light used in courtship.'),flamingo:extra('Greater Flamingo','Phoenicopterus roseus','PHOENICOPTERIDAE',['Wading bird','Social','Saltwater'],'Flamingos gather in rose-coloured colonies, filtering tiny organisms from shallow water with a bill built like a sieve.','120–145 cm','Algae and small crustaceans','Africa, Europe and Asia','Salt lakes and coastal lagoons','A pink horizon that learned to move.','Its colour is borrowed from its food, turning the feeding ground into a palette.'),hornbill:extra('Great Hornbill','Buceros bicornis','BUCEROTIDAE',['Canopy bird','Heavy bill','Forest'],'A canopy specialist with a theatrical casque, the great hornbill carries its forest home in every wingbeat and call.','90–105 cm','Fruit, insects and small animals','South and Southeast Asia','Old-growth rainforest','The canopy answers in a call of brass.','The casque amplifies its presence, making an already extraordinary silhouette impossible to miss.'),owl:extra('Barn Owl','Tyto alba','TYTONIDAE',['Night hunter','Silent flight','Nocturnal'],'A pale heart-faced hunter that crosses fields after dark, listening more than looking for movement below.','33–39 cm','Small mammals and birds','Every continent except Antarctica','Grassland, farms and open country','The night has a quiet architect.','Specialised wing feathers break up turbulence, allowing the barn owl to arrive almost without a sound.'),eagle:extra('Golden Eagle','Aquila chrysaetos','ACCIPITRIDAE',['Raptor','Mountain','Apex hunter'],'Golden eagles ride thermals over ridgelines, reading the landscape from a height few other birds can reach.','75–88 cm','Mammals and birds','Northern Hemisphere','Mountains, cliffs and open moorland','Above the ridge, the air becomes a road.','A flexible wing shape lets it switch from patient soaring to astonishing controlled speed.'),macaw:extra('Scarlet Macaw','Ara macao','PSITTACIDAE',['Tropical','Flock bird','Colourful'],'A scarlet macaw makes the rainforest feel louder, brighter and more alive with every crossing call.','80–90 cm','Fruit, nuts and seeds','Central and South America','Lowland rainforest','A red signal through the green.','Its curved bill can open hard tropical seeds that few other birds can reach.'),toucan:extra('Keel-billed Toucan','Ramphastos sulfuratus','RAMPHASTIDAE',['Canopy bird','Colourful bill','Fruit eater'],'The keel-billed toucan moves through humid canopy with a bill that looks oversized but works with remarkable precision.','42–55 cm','Fruit, insects and eggs','Central America','Tropical forest canopy','A bright bill, a darker forest.','The bill is light but powerful, built from a honeycomb structure beneath its vivid surface.'),hummingbird:extra('Ruby-throated Hummingbird','Archilochus colubris','TROCHILIDAE',['Hovering','Tiny','Migratory'],'A flash of green and ruby, the ruby-throated hummingbird can hover in place while its wings draw invisible geometry.','7–9 cm','Nectar and tiny insects','North and Central America','Gardens, woodland edges and meadows','A heartbeat with wings.','Its flight muscles power a living hover, letting it reverse and pause with uncanny control.'),penguin:extra('Emperor Penguin','Aptenodytes forsteri','SPHENISCIDAE',['Ocean bird','Endurance','Polar'],'The emperor penguin carries winter as a community, sharing warmth and distance across the Antarctic ice.','100–130 cm','Fish, squid and krill','Antarctica','Pack ice and open ocean','The coldest coast, held together.','Its dense feathers and layered down form one of nature’s most effective cold-weather systems.'),crane:extra('Sarus Crane','Antigone antigone','GRUIDAE',['Tall wader','Pair bonded','Wetland'],'The sarus crane rises above grass and water, known for its height, resonant call and lifelong pair bonds.','152–180 cm','Grains, roots and insects','South and Southeast Asia','Wetlands and agricultural fields','A red crown over the rice fields.','The world’s tallest flying bird moves with a calm, deliberate elegance across open water.'),robin:extra('European Robin','Erithacus rubecula','MUSCICAPIDAE',['Garden bird','Territorial','Songbird'],'A small orange-breasted singer that makes hedgerows feel personal, especially when winter strips the garden bare.','12.5–14 cm','Insects, worms and berries','Europe and western Asia','Gardens, woodland and hedgerows','Small song, unmistakable address.','Robins often follow gardeners, waiting for turned soil to reveal the next meal.'),stork:extra('Painted Stork','Mycteria leucocephala','CICONIIDAE',['Wetland','Long-legged','Colony bird'],'Painted storks patrol shallow wetlands with a sweeping bill, painting the waterline with white, black and rose.','93–102 cm','Fish, frogs and aquatic insects','South and Southeast Asia','Marshes, lakes and river edges','The shallows keep a record in colour.','Its bill works by touch in cloudy water, closing around prey without needing a clear view.'),falcon:extra('Peregrine Falcon','Falco peregrinus','FALCONIDAE',['Raptor','High-speed','Cliff nest'],'The peregrine turns open sky into a hunting ground, folding into a precise dive that can outrun the eye.','34–58 cm','Medium-sized birds','Worldwide','Cliffs, coastlines and city skylines','The sky folds, then the world accelerates.','Its streamlined body and stiff wing feathers make one of nature’s fastest hunting dives possible.'),heron:extra('Grey Heron','Ardea cinerea','ARDEIDAE',['Wading bird','Patient hunter','Wetland'],'A grey heron stands motionless at the water’s edge until stillness suddenly becomes a strike.','84–102 cm','Fish, amphibians and small mammals','Europe, Asia and Africa','Rivers, marshes and lakes','Patience, sharpened into a spear.','The long neck stays folded like a spring until the exact moment a fish comes within reach.'),lyrebird:extra('Superb Lyrebird','Menura novaehollandiae','MENURIDAE',['Mimic','Forest floor','Display'],'The superb lyrebird turns the forest into an audio archive, borrowing sounds and arranging them into a courtship performance.','80–100 cm','Invertebrates and seeds','Southeastern Australia','Moist eucalyptus forest','The forest sings through one voice.','Its tail becomes a theatre of feathers while its extraordinary vocal range recreates nearby sounds.'),ibis:extra('Scarlet Ibis','Eudocimus ruber','THRESKIORNITHIDAE',['Wetland','Crimson','Colonial'],'A scarlet ibis brings a saturated red to mangrove edges, sweeping mudflats with its long curved bill.','55–63 cm','Crabs, insects and aquatic prey','Northern South America and Caribbean','Mangroves and tidal wetlands','A red note in the mangrove light.','Its colour intensifies with carotenoids gathered from the small creatures it finds in wet soil.')});
+    Object.assign(birds,{
+      peacock:extra('Indian Peafowl','Pavo cristatus','PHASIANIDAE',['Display bird','Iridescent','Courtship'],'A slow-moving icon of colour, the peafowl turns its tail into a living fan when the forest floor becomes a stage.','90–230 cm','Seeds, fruit and insects','Indian subcontinent','Open woodland and cultivated edges','A thousand eyes in one impossible fan.','The eye-spots are not ornaments alone; they are a language of light used in courtship.'),
+      flamingo:extra('Greater Flamingo','Phoenicopterus roseus','PHOENICOPTERIDAE',['Wading bird','Social','Saltwater'],'Flamingos gather in rose-coloured colonies, filtering tiny organisms from shallow water with a bill built like a sieve.','120–145 cm','Algae and small crustaceans','Africa, Europe and Asia','Salt lakes and coastal lagoons','A pink horizon that learned to move.','Its colour is borrowed from its food, turning the feeding ground into a palette.'),
+      hornbill:extra('Great Hornbill','Buceros bicornis','BUCEROTIDAE',['Canopy bird','Heavy bill','Forest'],'A canopy specialist with a theatrical casque, the great hornbill carries its forest home in every wingbeat and call.','90–105 cm','Fruit, insects and small animals','South and Southeast Asia','Old-growth rainforest','The canopy answers in a call of brass.','The casque amplifies its presence, making an already extraordinary silhouette impossible to miss.'),
+      owl:extra('Barn Owl','Tyto alba','TYTONIDAE',['Night hunter','Silent flight','Nocturnal'],'A pale heart-faced hunter that crosses fields after dark, listening more than looking for movement below.','33–39 cm','Small mammals and birds','Every continent except Antarctica','Grassland, farms and open country','The night has a quiet architect.','Specialised wing feathers break up turbulence, allowing the barn owl to arrive almost without a sound.'),
+      eagle:extra('Golden Eagle','Aquila chrysaetos','ACCIPITRIDAE',['Raptor','Mountain','Apex hunter'],'Golden eagles ride thermals over ridgelines, reading the landscape from a height few other birds can reach.','75–88 cm','Mammals and birds','Northern Hemisphere','Mountains, cliffs and open moorland','Above the ridge, the air becomes a road.','A flexible wing shape lets it switch from patient soaring to astonishing controlled speed.'),
+      macaw:extra('Scarlet Macaw','Ara macao','PSITTACIDAE',['Tropical','Flock bird','Colourful'],'A scarlet macaw makes the rainforest feel louder, brighter and more alive with every crossing call.','80–90 cm','Fruit, nuts and seeds','Central and South America','Lowland rainforest','A red signal through the green.','Its curved bill can open hard tropical seeds that few other birds can reach.'),
+      toucan:extra('Keel-billed Toucan','Ramphastos sulfuratus','RAMPHASTIDAE',['Canopy bird','Colourful bill','Fruit eater'],'The keel-billed toucan moves through humid canopy with a bill that looks oversized but works with remarkable precision.','42–55 cm','Fruit, insects and eggs','Central America','Tropical forest canopy','A bright bill, a darker forest.','The bill is light but powerful, built from a honeycomb structure beneath its vivid surface.'),
+      hummingbird:extra('Ruby-throated Hummingbird','Archilochus colubris','TROCHILIDAE',['Hovering','Tiny','Migratory'],'A flash of green and ruby, the ruby-throated hummingbird can hover in place while its wings draw invisible geometry.','7–9 cm','Nectar and tiny insects','North and Central America','Gardens, woodland edges and meadows','A heartbeat with wings.','Its flight muscles power a living hover, letting it reverse and pause with uncanny control.'),
+      penguin:extra('Emperor Penguin','Aptenodytes forsteri','SPHENISCIDAE',['Ocean bird','Endurance','Polar'],'The emperor penguin carries winter as a community, sharing warmth and distance across the Antarctic ice.','100–130 cm','Fish, squid and krill','Antarctica','Pack ice and open ocean','The coldest coast, held together.','Its dense feathers and layered down form one of nature’s most effective cold-weather systems.'),
+      crane:extra('Sarus Crane','Antigone antigone','GRUIDAE',['Tall wader','Pair bonded','Wetland'],'The sarus crane rises above grass and water, known for its height, resonant call and lifelong pair bonds.','152–180 cm','Grains, roots and insects','South and Southeast Asia','Wetlands and agricultural fields','A red crown over the rice fields.','The world’s tallest flying bird moves with a calm, deliberate elegance across open water.'),
+      robin:extra('European Robin','Erithacus rubecula','MUSCICAPIDAE',['Garden bird','Territorial','Songbird'],'A small orange-breasted singer that makes hedgerows feel personal, especially when winter strips the garden bare.','12.5–14 cm','Insects, worms and berries','Europe and western Asia','Gardens, woodland and hedgerows','Small song, unmistakable address.','Robins often follow gardeners, waiting for turned soil to reveal the next meal.'),
+      stork:extra('Painted Stork','Mycteria leucocephala','CICONIIDAE',['Wetland','Long-legged','Colony bird'],'Painted storks patrol shallow wetlands with a sweeping bill, painting the waterline with white, black and rose.','93–102 cm','Fish, frogs and aquatic insects','South and Southeast Asia','Marshes, lakes and river edges','The shallows keep a record in colour.','Its bill works by touch in cloudy water, closing around prey without needing a clear view.'),
+      falcon:extra('Peregrine Falcon','Falco peregrinus','FALCONIDAE',['Raptor','High-speed','Cliff nest'],'The peregrine turns open sky into a hunting ground, folding into a precise dive that can outrun the eye.','34–58 cm','Medium-sized birds','Worldwide','Cliffs, coastlines and city skylines','The sky folds, then the world accelerates.','Its streamlined body and stiff wing feathers make one of nature’s fastest hunting dives possible.'),
+      heron:extra('Grey Heron','Ardea cinerea','ARDEIDAE',['Wading bird','Patient hunter','Wetland'],'A grey heron stands motionless at the water’s edge until stillness suddenly becomes a strike.','84–102 cm','Fish, amphibians and small mammals','Europe, Asia and Africa','Rivers, marshes and lakes','Patience, sharpened into a spear.','The long neck stays folded like a spring until the exact moment a fish comes within reach.'),
+      lyrebird:extra('Superb Lyrebird','Menura novaehollandiae','MENURIDAE',['Mimic','Forest floor','Display'],'The superb lyrebird turns the forest into an audio archive, borrowing sounds and arranging them into a courtship performance.','80–100 cm','Invertebrates and seeds','Southeastern Australia','Moist eucalyptus forest','The forest sings through one voice.','Its tail becomes a theatre of feathers while its extraordinary vocal range recreates nearby sounds.'),
+      ibis:extra('Scarlet Ibis','Eudocimus ruber','THRESKIORNITHIDAE',['Wetland','Crimson','Colonial'],'A scarlet ibis brings a saturated red to mangrove edges, sweeping mudflats with its long curved bill.','55–63 cm','Crabs, insects and aquatic prey','Northern South America and Caribbean','Mangroves and tidal wetlands','A red note in the mangrove light.','Its colour intensifies with carotenoids gathered from the small creatures it finds in wet soil.')
+    });
     birds.peacock.image='assets/peacock.png';birds.flamingo.image='assets/flamingo.png';birds.hornbill.image='assets/hornbill.png';birds.owl.image='assets/owl.png';birds.eagle.image='assets/eagle.png';birds.macaw.image='assets/macaw.png';birds.toucan.image='assets/toucan.png';birds.hummingbird.image='assets/hummingbird.png';birds.penguin.image='assets/penguin.png';birds.crane.image='assets/crane.png';birds.robin.image='assets/robin.png';birds.stork.image='assets/stork.png';birds.falcon.image='assets/falcon.png';birds.heron.image='assets/heron.png';birds.ibis.image='assets/ibis.png';birds.lyrebird.image='assets/lyrebird.png';
-    const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)]; let active='ibis', zoom=1, focused=false, dragging=false, lastX=0,lastY=0,velocityX=0,velocityY=0,lastInput=performance.now(),turnQueue=0,fallbackTurn=0;
-    const hero=$('#hero'),stage=$('#stage'),loader=$('#loader'),fallback=$('#fallback'),hint=$('#hint'),caption=$('#caption'), featuredImg=$('#featured-img');
+
+    const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+    let active='kingfisher', zoom=1, focused=false, dragging=false, lastX=0,lastY=0,velocityX=0,velocityY=0,lastInput=performance.now(),turnQueue=0;
+    const hero=$('#hero'),stage=$('#stage'),loader=$('#loader'),hint=$('#hint'),caption=$('#caption'), featuredImg=$('#featured-img'), tabs=$('.tabs');
     function icon(id){return '<svg><use href="#'+id+'"/></svg>'}
-    function renderInfo(){const b=birds[active],visual=b.image||birds.kingfisher.image;$('#family').textContent=b.family;$('#bird-name').textContent=b.name;$('#description').textContent=b.description;$('#habitat').textContent=b.habitat;$('#closeup-text').textContent=b.close;$('#tags').innerHTML=b.tags.map(x=>'<span class="tag">'+x+'</span>').join('');$('#traits').innerHTML=b.traits.map(t=>'<div class="trait">'+icon(t[0])+'<label>'+t[1]+'</label><span>'+t[2]+'</span></div>').join('');caption.textContent=b.caption;featuredImg.src=visual;featuredImg.alt=b.name+' specimen';$('#featured-title').textContent=b.featuredTitle;$('#featured-text').textContent=b.featuredText;$('#lens').style.backgroundImage='url("'+visual+'")';$('#lens').style.backgroundPosition=b.lens;$('#species-select').value=active;$$('.tab').forEach(t=>{t.setAttribute('aria-selected',String(t.dataset.bird===active));t.querySelector('img').src=birds[t.dataset.bird].image});}
-    const birdEntries=Object.entries(birds).reverse();
-    const speciesSelect=$('#species-select');speciesSelect.innerHTML=birdEntries.map(([id,b])=>'<option value="'+id+'">'+b.name+'</option>').join('');speciesSelect.addEventListener('change',e=>switchBird(e.target.value));
-    const tabs=$('.tabs');tabs.innerHTML=birdEntries.map(([id,b])=>'<button class="tab" role="tab" aria-selected="'+String(id===active)+'" data-bird="'+id+'"><img src="'+b.image+'" alt="'+b.name+' specimen"><strong>'+b.name+'</strong><em>'+b.latin+'</em></button>').join('');
+
+    function renderInfo(){
+      const b=birds[active],visual=b.image||birds.kingfisher.image;
+      $('#family').textContent=b.family;
+      $('#bird-name').textContent=b.name;
+      $('#description').textContent=b.description;
+      $('#habitat').textContent=b.habitat;
+      $('#closeup-text').textContent=b.close;
+      $('#tags').innerHTML=b.tags.map(x=>'<span class="tag">'+x+'</span>').join('');
+      $('#traits').innerHTML=b.traits.map(t=>'<div class="trait">'+icon(t[0])+'<label>'+t[1]+'</label><span>'+t[2]+'</span></div>').join('');
+      caption.textContent=b.caption;
+      featuredImg.src=visual;
+      featuredImg.alt=b.name+' specimen';
+      $('#featured-title').textContent=b.featuredTitle;
+      $('#featured-text').textContent=b.featuredText;
+      $('#lens').style.backgroundImage='url("'+visual+'")';
+      $('#lens').style.backgroundPosition=b.lens;
+      $('#species-select').value=active;
+      $$('.tab').forEach(t=>{
+        t.setAttribute('aria-selected',String(t.dataset.bird===active));
+      });
+    }
+
+    const birdEntries=Object.entries(birds);
+    const speciesSelect=$('#species-select');
+    speciesSelect.innerHTML=birdEntries.map(([id,b])=>'<option value="'+id+'">'+b.name+'</option>').join('');
+    speciesSelect.addEventListener('change',e=>switchBird(e.target.value));
+
+    // Dynamic filtering for Navigation and Search
+    const categoryMap = {
+      all: () => true,
+      featured: (id) => id === 'hoopoe' || id === 'kingfisher',
+      songbirds: (id, b) => id === 'robin' || id === 'lyrebird' || id === 'hoopoe' || b.tags.some(t => t.toLowerCase().includes('song')),
+      kingfishers: (id) => id === 'kingfisher',
+      owls: (id) => id === 'owl',
+      hummingbirds: (id) => id === 'hummingbird',
+      raptors: (id, b) => id === 'eagle' || id === 'falcon' || b.tags.some(t => t.toLowerCase().includes('raptor')),
+      waders: (id, b) => id === 'flamingo' || id === 'crane' || id === 'stork' || id === 'heron' || id === 'ibis' || b.tags.some(t => t.toLowerCase().includes('wader'))
+    };
+
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    function getVisibleBirds(){
+      const q = searchQuery.trim().toLowerCase();
+      const filterFn = categoryMap[currentCategory] || categoryMap.all;
+      return birdEntries.filter(([id, b]) => {
+        if (!filterFn(id, b)) return false;
+        if (!q) return true;
+        return b.name.toLowerCase().includes(q) ||
+               b.latin.toLowerCase().includes(q) ||
+               b.family.toLowerCase().includes(q) ||
+               b.habitat.toLowerCase().includes(q) ||
+               b.tags.some(t => t.toLowerCase().includes(q));
+      });
+    }
+
+    function renderTabs(){
+      const visible = getVisibleBirds();
+      if(visible.length === 0){
+        tabs.innerHTML = '<div style="padding:12px 16px;color:var(--muted);font-size:12.5px">No specimen matches search query</div>';
+        return;
+      }
+      tabs.innerHTML = visible.map(([id, b]) =>
+        `<button class="tab" role="tab" aria-selected="${String(id===active)}" data-bird="${id}">`+
+        `<img src="${b.image}" alt="${b.name} specimen"><strong>${b.name}</strong><em>${b.latin}</em></button>`
+      ).join('');
+      $$('.tab').forEach(t => t.addEventListener('click', () => switchBird(t.dataset.bird)));
+      if (!visible.some(([id]) => id === active)) {
+        switchBird(visible[0][0]);
+      }
+    }
+
+    $$('.nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        $$('.nav button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.dataset.cat || 'all';
+        renderTabs();
+      });
+    });
+
+    $$('.search input').forEach(inp => {
+      inp.addEventListener('input', e => {
+        searchQuery = e.target.value;
+        $$('.search input').forEach(other => { if(other !== e.target) other.value = searchQuery; });
+        renderTabs();
+      });
+    });
+
+    renderTabs();
     renderInfo();
-    function updateFallbackTurn(){fallback.style.setProperty('--fallback-turn',fallbackTurn+'deg');}
-    const cursorOrb=$('#cursor-orb');hero.addEventListener('pointermove',e=>{if(matchMedia('(pointer:fine)').matches){const r=hero.getBoundingClientRect();cursorOrb.style.left=(e.clientX-r.left)+'px';cursorOrb.style.top=(e.clientY-r.top)+'px';hero.classList.add('cursor-active')}});hero.addEventListener('pointerleave',()=>hero.classList.remove('cursor-active'));
-    const loader3d=new GLTFLoader(), draco=new DRACOLoader();draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');loader3d.setDRACOLoader(draco);loader3d.setMeshoptDecoder(MeshoptDecoder);const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(26,1,.01,100),renderer=new THREE.WebGLRenderer({canvas:$('#gl'),alpha:true,antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.05;const pmrem=new THREE.PMREMGenerator(renderer);scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;const key=new THREE.DirectionalLight(0xfff4e2,1.6);key.position.set(2.5,4,5);scene.add(key);const rim=new THREE.DirectionalLight(0xbfd8ff,.5);rim.position.set(-4,2,-3);scene.add(rim);const rigs={};let loaded={};
-    function normalize(gltf,id){const pivot=new THREE.Group(),spin=new THREE.Group(),holder=new THREE.Group();pivot.add(spin);spin.add(holder);const obj=gltf.scene;let box=new THREE.Box3().setFromObject(obj),sphere=box.getBoundingSphere(new THREE.Sphere());obj.position.sub(sphere.center);holder.add(obj);holder.scale.setScalar(1/Math.max(sphere.radius,.001));obj.traverse(o=>{o.frustumCulled=false;if(o.isMesh&&o.material){const mats=Array.isArray(o.material)?o.material:[o.material];mats.forEach(m=>{if(m.map)m.map.anisotropy=renderer.capabilities.getMaxAnisotropy()})}});pivot.visible=false;scene.add(pivot);rigs[id]={pivot,spin,holder};loaded[id]=true;return rigs[id]}
-    function load(id){if(loaded[id])return Promise.resolve(rigs[id]);if(!birds[id].model){fallback.classList.add('show');fallback.querySelector('img').src=birds[id].image||birds.kingfisher.image;loader.classList.remove('show');return Promise.resolve(null)}loader.show;loader.classList.add('show');return new Promise((resolve,reject)=>loader3d.load(birds[id].model,g=>{const r=normalize(g,id);loader.classList.remove('show');fallback.classList.remove('show');resolve(r)},undefined,e=>{console.warn('Model failed',id,e);if(id===active){fallback.classList.add('show');fallback.querySelector('img').src=birds[id].image||birds.kingfisher.image;loader.classList.remove('show')}reject(e)}))}
-    load(active).then(()=>setActive(active));load('hoopoe').catch(()=>{});
-    function setActive(id){active=id;renderInfo();Object.entries(rigs).forEach(([k,r])=>r.pivot.visible=k===id);if(rigs[id]){fallback.classList.remove('show');rigs[id].spin.rotation.set(.12,.75,0,'YXZ');rigs[id].pivot.position.set(0,0,0);zoom=1}else{fallback.classList.add('show');fallback.querySelector('img').src=birds[id].image||birds.kingfisher.image}lastInput=performance.now()}
-    async function switchBird(id){if(id===active)return;stage.classList.add('switching');loader.classList.add('show');try{await load(id);setActive(id)}finally{setTimeout(()=>{stage.classList.remove('switching');loader.classList.remove('show')},180)}}
-    $$('.tab').forEach(t=>t.addEventListener('click',()=>switchBird(t.dataset.bird)));stage.addEventListener('pointerdown',e=>{dragging=true;stage.classList.add('grabbing');stage.setPointerCapture(e.pointerId);lastX=e.clientX;lastY=e.clientY;hint.classList.add('hidden');lastInput=performance.now()});stage.addEventListener('pointermove',e=>{if(!dragging)return;const r=rigs[active];if(!r)return;const dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;velocityX=dx*.012;velocityY=dy*.009;r.spin.rotation.y+=dx*.012;r.spin.rotation.x+=dy*.009;lastInput=performance.now()});['pointerup','pointercancel'].forEach(x=>stage.addEventListener(x,e=>{dragging=false;stage.classList.remove('grabbing');try{stage.releasePointerCapture(e.pointerId)}catch{}}));stage.addEventListener('wheel',e=>{e.preventDefault();zoom=THREE.MathUtils.clamp(zoom*Math.exp(-e.deltaY*(e.ctrlKey?.0001:.0016)),.55,3.4);lastInput=performance.now()},{passive:false});stage.addEventListener('dblclick',()=>resetView());stage.addEventListener('keydown',e=>{const r=rigs[active];if(e.key==='ArrowLeft'&&r){r.spin.rotation.y-=.18;e.preventDefault()}if(e.key==='ArrowRight'&&r){r.spin.rotation.y+=.18;e.preventDefault()}if(e.key==='+')zoom=Math.min(3.4,zoom*1.2);if(e.key==='-')zoom=Math.max(.55,zoom/1.2);if(e.key==='0')resetView();if(e.key==='Escape')setFocus(false)});
-    stage.addEventListener('pointermove',e=>{if(!dragging||rigs[active])return;fallbackTurn+=(e.clientX-lastX)*.9;lastX=e.clientX;lastY=e.clientY;updateFallbackTurn();lastInput=performance.now()});
-    function resetView(){const r=rigs[active];if(r)r.spin.rotation.set(.12,.75,0,'YXZ');fallbackTurn=0;updateFallbackTurn();zoom=1;lastInput=performance.now()}$$('[data-turn]').forEach(b=>b.addEventListener('click',()=>{turnQueue+=Number(b.dataset.turn)*Math.PI/2;lastInput=performance.now()}));$$('[data-action]').forEach(b=>b.addEventListener('click',()=>{const a=b.dataset.action;if(a==='zoom-in')zoom=Math.min(3.4,zoom*1.35);if(a==='zoom-out')zoom=Math.max(.55,zoom/1.35);if(a==='expand')setFocus(!focused);if(a==='light'){hero.dataset.light=hero.dataset.light==='day'?'dusk':'day';document.body.style.background=hero.dataset.light==='dusk'?'#171515':'#faf7ee'}lastInput=performance.now()}));function setFocus(v){focused=v;hero.classList.toggle('focus',v);if(!v)hero.dataset.light=hero.dataset.light}
-    $('#closeup').addEventListener('click',()=>{$('#closeup').setAttribute('aria-pressed',String(zoom<=2.2));zoom=zoom>2.2?1:2.6});window.addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight,false);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix()});window.dispatchEvent(new Event('resize'));
-    const clock=new THREE.Clock();function animate(){requestAnimationFrame(animate);const dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;const r=rigs[active];if(r){if(!dragging){r.spin.rotation.y+=velocityX; r.spin.rotation.x+=velocityY;velocityX*=Math.exp(-dt*4.5);velocityY*=Math.exp(-dt*4.5)}if(Math.abs(turnQueue)>.0001){const step=turnQueue*(1-Math.exp(-dt*4.2));r.spin.rotation.y+=step;turnQueue-=step}const idle=performance.now()-lastInput>1800&&!dragging;r.pivot.rotation.y=idle?Math.sin(t*.55)*.16:0;r.pivot.rotation.x=idle?Math.sin(t*.9)*.03:0;r.pivot.position.y=idle?Math.sin(t*1.3)*.028:0;r.pivot.scale.setScalar(focused?1.25:1)}camera.position.z=focused?3.8/zoom:4.7/zoom;camera.lookAt(0,focused?.1:.02,0);renderer.render(scene,camera)}animate();
+
+    const cursorOrb=$('#cursor-orb');
+    hero.addEventListener('pointermove',e=>{
+      if(matchMedia('(pointer:fine)').matches){
+        const r=hero.getBoundingClientRect();
+        cursorOrb.style.left=(e.clientX-r.left)+'px';
+        cursorOrb.style.top=(e.clientY-r.top)+'px';
+        hero.classList.add('cursor-active');
+      }
+    });
+    hero.addEventListener('pointerleave',()=>hero.classList.remove('cursor-active'));
+
+    // Three.js 3D WebGL Engine
+    const loader3d=new GLTFLoader(), draco=new DRACOLoader();
+    draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+    loader3d.setDRACOLoader(draco);
+    loader3d.setMeshoptDecoder(MeshoptDecoder);
+    const texLoader = new THREE.TextureLoader();
+
+    const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(26,1,.01,100),renderer=new THREE.WebGLRenderer({canvas:$('#gl'),alpha:true,antialias:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.outputColorSpace=THREE.SRGBColorSpace;
+    renderer.toneMapping=THREE.NeutralToneMapping;
+    renderer.toneMappingExposure=1.05;
+    const pmrem=new THREE.PMREMGenerator(renderer);
+    scene.environment=pmrem.fromScene(new RoomEnvironment(),.04).texture;
+    const key=new THREE.DirectionalLight(0xfff4e2,1.6);
+    key.position.set(2.5,4,5);
+    scene.add(key);
+    const rim=new THREE.DirectionalLight(0xbfd8ff,.6);
+    rim.position.set(-4,2,-3);
+    scene.add(rim);
+
+    const rigs={};
+    let loaded={};
+
+    function normalizeGLTF(gltf,id){
+      const pivot=new THREE.Group(),spin=new THREE.Group(),holder=new THREE.Group();
+      pivot.add(spin);spin.add(holder);
+      const obj=gltf.scene;
+      let box=new THREE.Box3().setFromObject(obj),sphere=box.getBoundingSphere(new THREE.Sphere());
+      obj.position.sub(sphere.center);
+      holder.add(obj);
+      holder.scale.setScalar(1/Math.max(sphere.radius,.001));
+      obj.traverse(o=>{
+        o.frustumCulled=false;
+        if(o.isMesh&&o.material){
+          const mats=Array.isArray(o.material)?o.material:[o.material];
+          mats.forEach(m=>{if(m.map)m.map.anisotropy=renderer.capabilities.getMaxAnisotropy()});
+        }
+      });
+      pivot.visible=false;
+      scene.add(pivot);
+      rigs[id]={pivot,spin,holder};
+      loaded[id]=true;
+      return rigs[id];
+    }
+
+    // Build authentic multi-layer 3D volumetric specimen in Three.js
+    function build3DSpecimen(id){
+      if(loaded[id]) return Promise.resolve(rigs[id]);
+      const b=birds[id];
+      const url=b.image||birds.kingfisher.image;
+
+      return new Promise((resolve)=>{
+        texLoader.load(url, (texture)=>{
+          texture.colorSpace=THREE.SRGBColorSpace;
+          texture.anisotropy=renderer.capabilities.getMaxAnisotropy();
+          texture.generateMipmaps=true;
+          texture.minFilter=THREE.LinearMipmapLinearFilter;
+
+          const img=texture.image;
+          const aspect=(img&&img.width&&img.height)?(img.width/img.height):1;
+          let w=1.65, h=1.65;
+          if(aspect>1){ h = w / aspect; } else { w = h * aspect; }
+
+          const pivot=new THREE.Group();
+          const spin=new THREE.Group();
+          const holder=new THREE.Group();
+          pivot.add(spin);
+          spin.add(holder);
+
+          const specimenGroup=new THREE.Group();
+
+          // Organic curved plane: center arcs forward, wings sweep back naturally
+          const segs=32;
+          const geo=new THREE.PlaneGeometry(w, h, segs, segs);
+          const pos=geo.attributes.position;
+          for(let i=0; i<pos.count; i++){
+            const vx=pos.getX(i), vy=pos.getY(i);
+            const nx=vx/(w/2), ny=vy/(h/2);
+            const distSq=nx*nx*0.75 + ny*ny*0.25;
+            const curve=Math.max(0, 1 - distSq) * 0.055;
+            pos.setZ(i, curve);
+          }
+          geo.computeVertexNormals();
+
+          // Mirrored reverse texture for anatomical back view
+          const backTex=texture.clone();
+          backTex.wrapS=THREE.RepeatWrapping;
+          backTex.repeat.x=-1;
+          backTex.needsUpdate=true;
+
+          // Physical depth layers create contoured thickness and solid 3D mass when viewed edge-on
+          const totalDepth=0.088;
+          const sliceCount=14;
+          const halfDepth=totalDepth/2;
+
+          const coreMat=new THREE.MeshStandardMaterial({
+            map:texture,
+            transparent:true,
+            alphaTest:0.32,
+            depthWrite:true,
+            roughness:0.65,
+            metalness:0.04,
+            color:0x9c958c,
+            side:THREE.DoubleSide
+          });
+
+          const frontMat=new THREE.MeshStandardMaterial({
+            map:texture,
+            bumpMap:texture,
+            bumpScale:0.012,
+            transparent:true,
+            alphaTest:0.2,
+            depthWrite:true,
+            roughness:0.45,
+            metalness:0.06,
+            side:THREE.FrontSide
+          });
+
+          const backMat=new THREE.MeshStandardMaterial({
+            map:backTex,
+            bumpMap:backTex,
+            bumpScale:0.012,
+            transparent:true,
+            alphaTest:0.2,
+            depthWrite:true,
+            roughness:0.55,
+            metalness:0.04,
+            side:THREE.BackSide
+          });
+
+          // Stack intermediate volume slices for beveled 3D relief
+          for(let s=1; s<sliceCount-1; s++){
+            const t=s/(sliceCount-1);
+            const z=-halfDepth + t*totalDepth;
+            const slice=new THREE.Mesh(geo, coreMat);
+            slice.position.z=z;
+            const bevel=0.982 + 0.018 * Math.sin(t*Math.PI);
+            slice.scale.set(bevel, bevel, 1);
+            specimenGroup.add(slice);
+          }
+
+          // Front plumage plate
+          const frontMesh=new THREE.Mesh(geo, frontMat);
+          frontMesh.position.z=halfDepth;
+          specimenGroup.add(frontMesh);
+
+          // Reverse side plate
+          const backMesh=new THREE.Mesh(geo, backMat);
+          backMesh.position.z=-halfDepth;
+          specimenGroup.add(backMesh);
+
+          // Museum collector brass ring armature & dark walnut plinth
+          const pedestal=new THREE.Group();
+          const mountR=Math.min(w,h)*0.28;
+          const ringGeo=new THREE.TorusGeometry(mountR, 0.007, 16, 48);
+          const brassMat=new THREE.MeshStandardMaterial({
+            color:0xd4af37,
+            metalness:0.8,
+            roughness:0.28
+          });
+          const ring=new THREE.Mesh(ringGeo, brassMat);
+          ring.rotation.x=Math.PI/2;
+          ring.position.y=-h*0.44;
+          pedestal.add(ring);
+
+          const baseGeo=new THREE.CylinderGeometry(mountR*0.88, mountR*1.04, 0.024, 36);
+          const woodMat=new THREE.MeshStandardMaterial({
+            color:0x221a16,
+            roughness:0.65,
+            metalness:0.12
+          });
+          const plinth=new THREE.Mesh(baseGeo, woodMat);
+          plinth.position.y=-h*0.454;
+          pedestal.add(plinth);
+
+          specimenGroup.add(pedestal);
+          holder.add(specimenGroup);
+          holder.position.y=0.04;
+
+          pivot.visible=false;
+          scene.add(pivot);
+
+          rigs[id]={pivot,spin,holder};
+          loaded[id]=true;
+          resolve(rigs[id]);
+        });
+      });
+    }
+
+    function load(id){
+      if(loaded[id]) return Promise.resolve(rigs[id]);
+      loader.classList.add('show');
+
+      if(birds[id] && birds[id].model){
+        return new Promise((resolve)=>{
+          loader3d.load(birds[id].model, g=>{
+            const r=normalizeGLTF(g,id);
+            loader.classList.remove('show');
+            resolve(r);
+          }, undefined, e=>{
+            console.warn('Model network failed, using high-res 3D specimen rig', id, e);
+            build3DSpecimen(id).then(r=>{
+              loader.classList.remove('show');
+              resolve(r);
+            });
+          });
+        });
+      } else {
+        return build3DSpecimen(id).then(r=>{
+          loader.classList.remove('show');
+          return r;
+        });
+      }
+    }
+
+    load(active).then(()=>setActive(active));
+    load('hoopoe').catch(()=>{});
+
+    function setActive(id){
+      active=id;
+      renderInfo();
+      Object.entries(rigs).forEach(([k,r])=>{
+        r.pivot.visible=(k===id);
+      });
+      if(rigs[id]){
+        rigs[id].spin.rotation.set(.12,.75,0,'YXZ');
+        rigs[id].pivot.position.set(0,0,0);
+        zoom=1;
+      }
+      lastInput=performance.now();
+    }
+
+    async function switchBird(id){
+      if(id===active) return;
+      stage.classList.add('switching');
+      loader.classList.add('show');
+      try{
+        await load(id);
+        setActive(id);
+      } finally {
+        setTimeout(()=>{
+          stage.classList.remove('switching');
+          loader.classList.remove('show');
+        }, 180);
+      }
+    }
+
+    // Interactive Stage Controls (Mouse / Touch / Keys)
+    stage.addEventListener('pointerdown',e=>{
+      dragging=true;
+      stage.classList.add('grabbing');
+      stage.setPointerCapture(e.pointerId);
+      lastX=e.clientX;
+      lastY=e.clientY;
+      hint.classList.add('hidden');
+      lastInput=performance.now();
+    });
+
+    stage.addEventListener('pointermove',e=>{
+      if(!dragging) return;
+      const r=rigs[active];
+      if(!r) return;
+      const dx=e.clientX-lastX, dy=e.clientY-lastY;
+      lastX=e.clientX;
+      lastY=e.clientY;
+      velocityX=dx*0.012;
+      velocityY=dy*0.009;
+      r.spin.rotation.y+=dx*0.012;
+      r.spin.rotation.x+=dy*0.009;
+      lastInput=performance.now();
+    });
+
+    ['pointerup','pointercancel'].forEach(x=>stage.addEventListener(x,e=>{
+      dragging=false;
+      stage.classList.remove('grabbing');
+      try{ stage.releasePointerCapture(e.pointerId); }catch{}
+    }));
+
+    stage.addEventListener('wheel',e=>{
+      e.preventDefault();
+      zoom=THREE.MathUtils.clamp(zoom*Math.exp(-e.deltaY*(e.ctrlKey?.0001:.0016)),.55,3.4);
+      lastInput=performance.now();
+    },{passive:false});
+
+    stage.addEventListener('dblclick',()=>resetView());
+
+    stage.addEventListener('keydown',e=>{
+      const r=rigs[active];
+      if(e.key==='ArrowLeft'&&r){ r.spin.rotation.y-=.18; e.preventDefault(); }
+      if(e.key==='ArrowRight'&&r){ r.spin.rotation.y+=.18; e.preventDefault(); }
+      if(e.key==='+') zoom=Math.min(3.4,zoom*1.2);
+      if(e.key==='-') zoom=Math.max(.55,zoom/1.2);
+      if(e.key==='0') resetView();
+      if(e.key==='Escape') setFocus(false);
+    });
+
+    function resetView(){
+      const r=rigs[active];
+      if(r) r.spin.rotation.set(.12,.75,0,'YXZ');
+      zoom=1;
+      lastInput=performance.now();
+    }
+
+    $('[data-turn]').forEach(b=>b.addEventListener('click',()=>{
+      turnQueue+=Number(b.dataset.turn)*Math.PI/2;
+      lastInput=performance.now();
+    }));
+
+    $('[data-action]').forEach(b=>b.addEventListener('click',()=>{
+      const a=b.dataset.action;
+      if(a==='zoom-in') zoom=Math.min(3.4,zoom*1.35);
+      if(a==='zoom-out') zoom=Math.max(.55,zoom/1.35);
+      if(a==='expand') setFocus(!focused);
+      if(a==='light'){
+        hero.dataset.light=hero.dataset.light==='day'?'dusk':'day';
+        document.body.style.background=hero.dataset.light==='dusk'?'#171515':'#faf7ee';
+      }
+      lastInput=performance.now();
+    }));
+
+    function setFocus(v){
+      focused=v;
+      hero.classList.toggle('focus',v);
+    }
+
+    $('#closeup').addEventListener('click',()=>{
+      $('#closeup').setAttribute('aria-pressed',String(zoom<=2.2));
+      zoom=zoom>2.2?1:2.6;
+    });
+
+    window.addEventListener('resize',()=>{
+      renderer.setSize(innerWidth,innerHeight,false);
+      camera.aspect=innerWidth/innerHeight;
+      camera.updateProjectionMatrix();
+    });
+    window.dispatchEvent(new Event('resize'));
+
+    const clock=new THREE.Clock();
+    function animate(){
+      requestAnimationFrame(animate);
+      const dt=Math.min(clock.getDelta(),.05), t=clock.elapsedTime;
+      const r=rigs[active];
+      if(r){
+        if(!dragging){
+          r.spin.rotation.y+=velocityX;
+          r.spin.rotation.x+=velocityY;
+          velocityX*=Math.exp(-dt*4.5);
+          velocityY*=Math.exp(-dt*4.5);
+        }
+        if(Math.abs(turnQueue)>.0001){
+          const step=turnQueue*(1-Math.exp(-dt*4.2));
+          r.spin.rotation.y+=step;
+          turnQueue-=step;
+        }
+        const idle=performance.now()-lastInput>1800&&!dragging;
+        r.pivot.rotation.y=idle?Math.sin(t*.55)*.16:0;
+        r.pivot.rotation.x=idle?Math.sin(t*.9)*.03:0;
+        r.pivot.position.y=idle?Math.sin(t*1.3)*.028:0;
+        r.pivot.scale.setScalar(focused?1.25:1);
+      }
+      camera.position.z=focused?3.8/zoom:4.7/zoom;
+      camera.lookAt(0,focused?.1:.02,0);
+      renderer.render(scene,camera);
+    }
+    animate();
   </script>
 </body>
 </html>
