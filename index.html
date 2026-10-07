@@ -98,6 +98,11 @@
     });
     birds.peacock.image='assets/peacock.png';birds.flamingo.image='assets/flamingo.png';birds.hornbill.image='assets/hornbill.png';birds.owl.image='assets/owl.png';birds.eagle.image='assets/eagle.png';birds.macaw.image='assets/macaw.png';birds.toucan.image='assets/toucan.png';birds.hummingbird.image='assets/hummingbird.png';birds.penguin.image='assets/penguin.png';birds.crane.image='assets/crane.png';birds.robin.image='assets/robin.png';birds.stork.image='assets/stork.png';birds.falcon.image='assets/falcon.png';birds.heron.image='assets/heron.png';birds.ibis.image='assets/ibis.png';birds.lyrebird.image='assets/lyrebird.png';
 
+    // Link every bird species to its true 3D GLB model generated with Blender
+    Object.keys(birds).forEach(k => {
+      birds[k].model = `assets/models/${k}.glb`;
+    });
+
     const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
     let active='kingfisher', zoom=1, focused=false, dragging=false, lastX=0,lastY=0,velocityX=0,velocityY=0,lastInput=performance.now(),turnQueue=0;
     const hero=$('#hero'),stage=$('#stage'),loader=$('#loader'),hint=$('#hint'),caption=$('#caption'), featuredImg=$('#featured-img'), tabs=$('.tabs');
