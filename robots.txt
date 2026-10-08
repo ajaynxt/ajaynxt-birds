@@ -1,4 +1,24 @@
+# robots.txt for birds.ajaynxt.com (Feather Atlas 3D Living Field Guide)
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /index.html
 
-Sitemap: https://ajaynxtbirds.com/sitemap.xml
+# Specific Bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Host
+Host: https://birds.ajaynxt.com
+
+# XML Sitemap
+Sitemap: https://birds.ajaynxt.com/sitemap.xml

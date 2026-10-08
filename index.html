@@ -4,33 +4,34 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#faf7ee">
-  <title>Feather Atlas — 3D Living Field Guide of Bird Specimens | Ajay Saini</title>
+  <title>Feather Atlas — 3D Living Field Guide of Bird Specimens</title>
 
-  <!-- SEO Primary Meta Tags -->
-  <meta name="title" content="Feather Atlas — 3D Living Field Guide of Bird Specimens | Ajay Saini">
+  <!-- SEO Primary Meta Tags (Distinct Name for Website 3) -->
+  <meta name="title" content="Feather Atlas — 3D Living Field Guide of Bird Specimens">
   <meta name="description" content="Explore an interactive 3D WebGL field guide featuring 18 wild bird species with 360° models, biometric traits, and habitat field notes curated by Ajay Saini (ajaynxt.com).">
-  <meta name="keywords" content="Feather Atlas, 3D bird specimens, WebGL birds, ornithology field guide, bird field notes, Kingfisher 3D, Hoopoe 3D, Indian Peafowl 3D, wildlife 3D models, Ajay Saini, ajaynxt, Sikar web developer">
+  <meta name="keywords" content="Feather Atlas, 3D bird specimens, WebGL birds, ornithology field guide, bird field notes, Kingfisher 3D, Hoopoe 3D, Indian Peafowl 3D, wildlife 3D models, Ajay Saini, ajaynxt">
   <meta name="author" content="Ajay Saini">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link rel="canonical" href="https://ajaynxtbirds.com/">
+  <meta name="google-site-verification" content="wyo8PmaT23urkmXtbwdu7GLX1V2DEs0DcLSnlYD9HO8">
+  <link rel="canonical" href="https://birds.ajaynxt.com/">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_IN">
-  <meta property="og:site_name" content="Feather Atlas — 3D Field Guide by Ajay Saini">
+  <meta property="og:site_name" content="Feather Atlas 3D">
   <meta property="og:title" content="Feather Atlas — 3D Living Field Guide of Bird Specimens">
   <meta property="og:description" content="Explore 18 interactive 3D bird specimens with 360° rotation, high-resolution plumage inspection, biometric traits, and ornithological notes curated by Ajay Saini.">
-  <meta property="og:url" content="https://ajaynxtbirds.com/">
-  <meta property="og:image" content="https://ajaynxtbirds.com/assets/kingfisher.png">
+  <meta property="og:url" content="https://birds.ajaynxt.com/">
+  <meta property="og:image" content="https://birds.ajaynxt.com/assets/kingfisher.png">
   <meta property="og:image:alt" content="Feather Atlas 3D Bird Specimen Guide">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://ajaynxtbirds.com/">
+  <meta name="twitter:url" content="https://birds.ajaynxt.com/">
   <meta name="twitter:title" content="Feather Atlas — 3D Living Field Guide of Bird Specimens">
   <meta name="twitter:description" content="Explore 18 interactive 3D bird specimens with 360° rotation, biometric traits, and ornithological field notes curated by Ajay Saini.">
-  <meta name="twitter:image" content="https://ajaynxtbirds.com/assets/kingfisher.png">
-  <meta name="twitter:creator" content="@ajay_nxt_">
+  <meta name="twitter:image" content="https://birds.ajaynxt.com/assets/kingfisher.png">
+  <meta name="twitter:creator" content="@ajaynxt">
 
   <!-- Schema.org Structured Data (JSON-LD) with Ajay Saini Portfolio Details -->
   <script type="application/ld+json">
@@ -39,10 +40,10 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://ajaynxtbirds.com/#website",
-        "url": "https://ajaynxtbirds.com/",
-        "name": "Feather Atlas",
-        "alternateName": "AJAYNXT Birds 3D Field Guide",
+        "@id": "https://birds.ajaynxt.com/#website",
+        "url": "https://birds.ajaynxt.com/",
+        "name": "Feather Atlas 3D",
+        "alternateName": "Feather Atlas 3D Living Field Guide",
         "description": "A 3D Living Field Guide of Bird Specimens with interactive 360° WebGL models.",
         "inLanguage": "en-IN",
         "publisher": { "@id": "https://ajaynxt.com/#person" }
@@ -74,10 +75,10 @@
       },
       {
         "@type": "CollectionPage",
-        "@id": "https://ajaynxtbirds.com/#collection",
-        "url": "https://ajaynxtbirds.com/",
+        "@id": "https://birds.ajaynxt.com/#collection",
+        "url": "https://birds.ajaynxt.com/",
         "name": "Feather Atlas — 3D Living Field Guide",
-        "isPartOf": { "@id": "https://ajaynxtbirds.com/#website" },
+        "isPartOf": { "@id": "https://birds.ajaynxt.com/#website" },
         "about": {
           "@type": "ItemList",
           "name": "18 Bird Specimens",
@@ -235,10 +236,7 @@
     });
     birds.peacock.image='assets/peacock.png';birds.flamingo.image='assets/flamingo.png';birds.hornbill.image='assets/hornbill.png';birds.owl.image='assets/owl.png';birds.eagle.image='assets/eagle.png';birds.macaw.image='assets/macaw.png';birds.toucan.image='assets/toucan.png';birds.hummingbird.image='assets/hummingbird.png';birds.penguin.image='assets/penguin.png';birds.crane.image='assets/crane.png';birds.robin.image='assets/robin.png';birds.stork.image='assets/stork.png';birds.falcon.image='assets/falcon.png';birds.heron.image='assets/heron.png';birds.ibis.image='assets/ibis.png';birds.lyrebird.image='assets/lyrebird.png';
 
-    // Link every bird species to its true 3D GLB model generated with Blender
-    Object.keys(birds).forEach(k => {
-      birds[k].model = `assets/models/${k}.glb`;
-    });
+
 
     const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
     let active='kingfisher', zoom=1, focused=false, dragging=false, lastX=0,lastY=0,velocityX=0,velocityY=0,lastInput=performance.now(),turnQueue=0;
