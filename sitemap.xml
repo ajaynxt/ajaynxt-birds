@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://ajaynxtbirds.com/</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ajaynxtbirds.com/assets/kingfisher.png</image:loc>
+      <image:title>Kingfisher 3D Field Specimen - Feather Atlas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ajaynxtbirds.com/assets/hoopoe.png</image:loc>
+      <image:title>Hoopoe 3D Field Specimen - Feather Atlas</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ajaynxtbirds.com/assets/peacock.png</image:loc>
+      <image:title>Indian Peafowl 3D Field Specimen - Feather Atlas</image:title>
+    </image:image>
+  </url>
+</urlset>
